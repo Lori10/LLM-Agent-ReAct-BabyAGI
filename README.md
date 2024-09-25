@@ -30,8 +30,11 @@ The BabyAGI Agent is designed to autonomously generate factual answers with refe
 
 ### Related Code/Scripts
 - The following Python scripts are relevant to this agent:
-  - `scriptA.py`
-  - `scriptB.py`
+  - `babyagi_inner_agent.py`
+  - `babyagi_outer_agent.py`
+  - `babyagi_top_down_prompts.py`
+  - `test_babyagi_inner_agent.py`
+  - test_babyagi_outer_agent.py
 
 ---
 
