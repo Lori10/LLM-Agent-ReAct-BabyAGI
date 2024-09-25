@@ -34,7 +34,7 @@ The BabyAGI Agent is designed to autonomously generate factual answers with refe
   - `babyagi_outer_agent.py`
   - `babyagi_top_down_prompts.py`
   - `test_babyagi_inner_agent.py`
-  - test_babyagi_outer_agent.py
+  - `test_babyagi_outer_agent.py`
 
 ---
 
