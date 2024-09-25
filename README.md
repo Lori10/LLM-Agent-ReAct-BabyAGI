@@ -42,7 +42,7 @@ The ReAct Agent is built on ReAct logic, which integrates reasoning and acting i
 
 ### Key Features
 - The agent performs multi-step self-questioning and answering until it can confidently answer the original question.
-- It employs a tool that helps answer sub-questions.
+- It utilizies a tool that helps answer sub-questions.
 - For each sub-question, the tool extracts relevant research papers from databases like **arXiv, ChemRxiv, PubMed**, and others through API requests.
 - Conducts semantic searches on extracted papers to identify the most relevant information, which is used as context for the GPT-3.5-turbo model to generate accurate and factual responses.
 - The final output includes both the answer and the reference paper upon which the answer was generated.
