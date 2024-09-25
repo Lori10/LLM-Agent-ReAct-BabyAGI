@@ -1,4 +1,4 @@
-# Autonomous AI Research Agent Based on ReAct
+# Autonomous AI Research Agent Based on BabyAGI and ReAct
 
 This repository consists of two autonomous AI agents: 
 1. **BabyAGI Agent**
