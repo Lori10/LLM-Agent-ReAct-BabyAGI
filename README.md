@@ -1,15 +1,55 @@
-# Autonomous AI Research Agent based on ReAct
+# Autonomous AI Research Agent Based on ReAct
 
-## Project Summary
-This project focuses on developing an advanced custom AI agent based on ReAct logic aimed at generating factual answers with references based on research publications. Language models are getting better at reasoning (e.g. chain-of-thought prompting) and acting (e.g. WebGPT, SayCan, ACT-1). ReAct integrates these two effective methods—reasoning and acting—into a unified approach, enhancing the overall capabilities of language models.
+This repository consists of two autonomous AI agents: 
+1. **BabyAGI Agent**
+2. **ReAct Agent**
 
-Key features of the Project:
-* Agent performs multi-step self-questioning and answering until the agent thinks it can answer the original question. It consist of a tool which helps the agent answer sub-questions.
-* For each sub-question, the agent's tool extracts relevant research papers across various databases, including arXiv, ChemRxiv, PubMed, and others through API requests. There is also the option of using the custom Unpaywall tool instead (Unpaywall is an open database of 50,057,146 free scholarly articles).
-* The tool performs semantic search on extracted papers to find the most relevant information, which is used as context to enable the GPT-3.5-turbo model to generate highly accurate and factual responses.
-* The system generates as final output the answer and the reference paper based on which the answers was generated.
-* Outputs from the language model are in JSON, simplifying the extraction of necessary details like answers and references, thus enhancing usability and integration capability.
+Since both agents utilize similar tools, they are included in the same repository.
 
+---
 
-## Tools and packages
-* Python, langchain, paperqa, findpapers, unpaywall
+## 1. BabyAGI Agent
+
+### Project Summary
+The BabyAGI Agent is designed to autonomously generate factual answers with references, based on research publications. The agent operates through three distinct LLMs (Task Creation LLM, Task Execution LLM, and Task Prioritization LLM), functioning as follows:
+
+0. **Task Generation**: The Task Generation LLM generates a task list needed to reach the objective or answer the original question.
+1. **Task Execution**: The agent pulls the first task from the task list.
+2. **Completion & Storage**: The Task Execution LLM uses OpenAI's API to complete the task based on the context, enriches the result, and stores it in Chroma or Weaviate.
+3. **Task Prioritization**: The Task Creation LLM updates the task list by creating new tasks and reprioritizing them based on the objective and the results of previous tasks.
+
+### Key Features
+- Extends the open-source BabyAGI implementation by adding an **Answer Generation LLM** to generate a final answer for the original question or objective.
+- Optimizes bugs related to task generation.
+- The Task Execution LLM extracts relevant research papers from databases such as **arXiv, ChemRxiv, PubMed**, and more through API requests.
+- Conducts semantic searches on extracted papers to identify the most relevant information, which is used as context for the GPT-3.5-turbo model to generate accurate and factual responses.
+- The Answer Generation LLM provides the final output, including the answer and the reference paper upon which the answer is based.
+- Outputs are formatted in **JSON**, facilitating the extraction of necessary details like answers and references, enhancing usability and integration.
+
+### Tools and Packages
+- **Python**, **langchain**, **paperqa**, **findpapers**, **unpaywall**
+
+### Related Code/Scripts
+- The following Python scripts are relevant to this agent:
+  - `scriptA.py`
+  - `scriptB.py`
+
+---
+
+## 2. ReAct Agent
+
+### Project Summary
+The ReAct Agent is built on ReAct logic, which integrates reasoning and acting into a unified method. This agent autonomously generates factual answers with references based on research publications. ReAct leverages advances in language models that support reasoning (e.g., chain-of-thought prompting) and acting (e.g., WebGPT, SayCan, ACT-1), improving overall capabilities.
+
+### Key Features
+- The agent performs multi-step self-questioning and answering until it can confidently answer the original question.
+- It employs a tool that helps answer sub-questions.
+- For each sub-question, the tool extracts relevant research papers from databases like **arXiv, ChemRxiv, PubMed**, and others through API requests.
+- Conducts semantic searches on extracted papers to identify the most relevant information, which is used as context for the GPT-3.5-turbo model to generate accurate and factual responses.
+- The final output includes both the answer and the reference paper upon which the answer was generated.
+- Outputs are in **JSON** format, simplifying the extraction of details such as answers and references, enhancing usability and integration.
+
+### Tools and Packages
+- **Python**, **langchain**, **paperqa**, **findpapers**, **unpaywall**
+
+---
