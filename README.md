@@ -11,11 +11,11 @@ Since both agents utilize similar tools, they are included in the same repositor
 ## 1. BabyAGI Agent
 
 ### Project Summary
-The BabyAGI Agent is designed to autonomously generate factual answers with references, based on research publications. The agent operates through three distinct LLMs (Task Creation LLM, Task Execution LLM, and Task Prioritization LLM), functioning as follows:
+The BabyAGI Agent is designed to autonomously generate factual answers with references, based on research publications. The agent operates through three distinct LLMs (Task Generation LLM, Task Execution LLM, and Task Prioritization LLM), functioning as follows:
 
-0. **Task Generation**: The Task Generation LLM generates a task list needed to reach the objective or answer the original question.
-1. **Task Execution**: The agent pulls the first task from the task list. The Task Execution LLM uses OpenAI's API to complete the task based on the context, enriches the result, and stores it in Chroma or Weaviate.
-3. **Task Prioritization**: The Task Creation LLM updates the task list by creating new tasks and reprioritizing them based on the objective and the results of previous tasks.
+0. **Task Generation LLM**: The Task Generation LLM generates a task list needed to reach the objective or answer the original question.
+1. **Task Execution LLM**: The agent pulls the first task from the task list. The Task Execution LLM uses OpenAI's API to complete the task based on the context, enriches the result, and stores it in Chroma or Weaviate.
+3. **Task Prioritization LLM**: The Task Creation LLM updates the task list by creating new tasks and the Task Prioritization LLM reprioritizes them based on the objective and the results of previous tasks.
 
 ### Key Features
 - Extends the open-source BabyAGI implementation by adding an **Answer Generation LLM** to generate a final answer for the original question or objective.
