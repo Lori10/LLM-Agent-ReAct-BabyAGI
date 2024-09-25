@@ -54,4 +54,12 @@ The ReAct Agent is built on ReAct logic, which integrates reasoning and acting i
 ### Tools and Packages
 - **Python**, **langchain**, **paperqa**, **findpapers**, **unpaywall**
 
+### Related Code/Scripts
+- The following Python scripts are relevant to this agent:
+  - `top_down_agent.py`
+  - `top_down_prompts.py`
+  - `babyagi_top_down_prompts.py`
+  - `agent_literaturesearch_tool_test.py.py`
+  - `agent_findpapers_qa_tool_test.py.py`
+
 ---
